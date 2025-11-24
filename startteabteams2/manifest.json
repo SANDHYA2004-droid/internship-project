@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Teams Recorder",
+  "version": "1.0",
+  "description": "Record Teams meetings with video + audio",
+  "permissions": [
+    "tabs",
+    "tabCapture", 
+    "downloads",
+    "storage",
+    "notifications",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.teams.microsoft.com/*",
+    "https://*.teams.live.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.teams.microsoft.com/*",
+        "https://*.teams.live.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["recorder.html", "recorder.js"],
+      "matches": ["https://*.teams.microsoft.com/*", "https://*.teams.live.com/*"]
+    }
+  ]
+}

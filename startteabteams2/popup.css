@@ -1,0 +1,149 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-card {
+  width: 320px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.popup-card h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.modes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.mode-tile {
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.25s ease-in-out;
+  color: #fff;
+}
+
+.mode-tile:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.mode-tile input {
+  display: none;
+}
+
+.mode-tile input:checked + span {
+  color: #fff;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  padding: 6px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: #222;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.status.neutral {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.status.active {
+  background: rgba(67, 233, 123, 0.25);
+}
+
+.status.inactive {
+  background: rgba(255, 82, 82, 0.25);
+}
+
+.manual {
+  display: none;
+  margin-top: 12px;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.btn-secondary {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #42a5f5, #478ed1);
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.btn-secondary:hover {
+  transform: scale(1.05);
+}
+
+.btn-danger {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.btn-danger:hover {
+  transform: scale(1.05);
+}
