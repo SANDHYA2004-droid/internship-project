@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Zoom Recorder",
+  "version": "1.0",
+  "description": "Record Zoom meetings with video + audio",
+  "permissions": [
+    "tabs",
+    "tabCapture", 
+    "downloads",
+    "storage",
+    "notifications",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://*.zoom.us/*",
+    "https://zoom.us/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.zoom.us/*",
+        "https://zoom.us/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["recorder.html", "recorder.js"],
+      "matches": ["https://*.zoom.us/*", "https://zoom.us/*"]
+    }
+  ]
+}
